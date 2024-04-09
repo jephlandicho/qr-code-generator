@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 450px;
+  width: 100%;
+  padding: 20px;
+  margin: 100px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.container h1 {
+  font-size: 24px;
+  background: #333;
+  font-weight: 300;
+  padding: 25px 0;
+  margin: -20px -20px 20px -20px;
+  text-align: center;
+  border-radius: 8px 8px 0 0;
+  color: white;
+}
+
+.container form input {
+  width: calc(100% - 20px);
+  outline: none;
+  border: 1.5px solid #ccc;
+  height: 45px;
+  border-radius: 3px;
+  padding: 0 10px;
+  background: #fff;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.container form button {
+  outline: none;
+  border: none;
+  height: 45px;
+  width: 45px; /* Adjust button width */
+  border-radius: 50%;
+  padding: 0;
+  background: #333;
+  margin-right: 5px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  position: relative;
+}
+
+.container form button:hover {
+  background: #555;
+}
+
+.container form #qrcode-container {
+  display: none;
+  justify-content: center;
+}
+
+.container form .qrcode {
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.container form .qrcode img {
+  margin: 0 auto;
+  box-shadow: 0 2px 3px rgba(67, 67, 68, 0.25);
+  padding: 4px;
+  background-color: transparent; /* Remove background color of QR code */
+}
+
+/* Tooltip styles */
+.container form button::after {
+  content: attr(title);
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 6px 10px; /* Adjust padding */
+  border-radius: 4px;
+  bottom: -30px; /* Adjust position */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  font-size: 14px; /* Adjust font size */
+  white-space: nowrap;
+}
+
+.container form button:hover::after {
+  opacity: 1;
+}
